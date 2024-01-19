@@ -6,6 +6,7 @@ import '../styles/grid-section.css';
 import '../styles/button-filter.css';
 import '../styles/checkbox-filter.css';
 import '../styles/dropdown-filter.css';
+import '../styles/menu-button.css'
 
 const App = ({ Component, pageProps }) => {
     return (

@@ -3,6 +3,7 @@ import Card from "./Card";
 import DropdownFilter from "./Dropdown";
 import CheckboxFilter from "./CheckboxFilter";
 import ButtonFilter from "./ButtonFilter";
+import MenuButton from "./MenuButton";
 
 const GridSection = ({ dbData }) => {
   const dataDbRes = dbData;
@@ -136,56 +137,54 @@ const GridSection = ({ dbData }) => {
 
   return (
     <div className="grid-section">
-      <div className={`filter-section-out ${!menuOpen ? 'menu-open' : 'menu-closed'}`}>
+      <div
+        className={`filter-section-out ${
+          !menuOpen ? "menu-open" : "menu-closed"
+        }`}
+      >
         <div className="filter-section">
-            <input
-              type="checkbox"
-              className="button-open-menu"
-              onChange={toogleMenu}
+          <MenuButton toogleMenu={toogleMenu} className="button-open-menu"/>
+          <div className="filter-bar">
+            <ButtonFilter
+              title={"Pet"}
+              options={uniqueType}
+              onChange={(selectedOption) =>
+                handleFilterChange(selectedOption, "Type")
+              }
             />
-                <div className="filter-bar">
-
-                <ButtonFilter 
-                  title={"Pet"}
-                  options={uniqueType}
-                  onChange={(selectedOption) =>
-                    handleFilterChange(selectedOption, "Type")
-                  }
-                />
-                <CheckboxFilter
-                  title={"Age"}
-                  options={uniqueAge}
-                  onChange={(selectedOption) =>
-                    handleFilterChange(selectedOption, "Age")
-                  }
-                />
-                <DropdownFilter
-                  title={"Raça"}
-                  options={uniqueBreed}
-                  onChange={(selectedOption) =>
-                    handleFilterChange(selectedOption, "Breed")
-                  }
-                />
-                <DropdownFilter
-                  title={"Localização"}
-                  options={uniqueLocation}
-                  onChange={(selectedOption) =>
-                    handleFilterChange(selectedOption, "Location")
-                  }
-                />
-
-                </div>
-            
+            <CheckboxFilter
+              title={"Idade"}
+              options={uniqueAge}
+              onChange={(selectedOption) =>
+                handleFilterChange(selectedOption, "Age")
+              }
+            />
+            <DropdownFilter
+              title={"Raça"}
+              options={uniqueBreed}
+              onChange={(selectedOption) =>
+                handleFilterChange(selectedOption, "Breed")
+              }
+            />
+            <DropdownFilter
+              title={"Localização"}
+              options={uniqueLocation}
+              onChange={(selectedOption) =>
+                handleFilterChange(selectedOption, "Location")
+              }
+            />
+          </div>
         </div>
       </div>
       {menuOpen ? (
         <div className="cards-section">
-        {filteredPets.map((pet, index) => (
-          <Card key={index} petData={pet} />
-        ))}
-      </div>
-      ) : ''}
-      
+          {filteredPets.map((pet, index) => (
+            <Card key={index} petData={pet} />
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

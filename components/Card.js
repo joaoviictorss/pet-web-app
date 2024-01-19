@@ -1,7 +1,4 @@
 const Card = ({ petData }) => {
-
-    console.log(petData);
-
     const url = petData.img_url;
     const svgUrl = petData.type.toLowerCase() === 'cat'
     ? '/cat.svg'

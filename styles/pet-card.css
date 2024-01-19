@@ -57,3 +57,12 @@
     cursor: pointer;
     background-color: #8f7fe8;
 }
+
+@media (orientation: portrait) and (max-width: 540px) {
+    .cards-section{
+        position: relative;
+
+    }
+
+
+}

@@ -7,6 +7,7 @@ import '../styles/button-filter.css';
 import '../styles/checkbox-filter.css';
 import '../styles/dropdown-filter.css';
 import '../styles/menu-button.css'
+import '../styles/pet-dynamic-page.css'
 
 const App = ({ Component, pageProps }) => {
     return (

@@ -1,32 +1,41 @@
-const Card = ({ petData }) => {
-    const url = petData.img_url;
-    const svgUrl = petData.type.toLowerCase() === 'cat'
+import Link from "next/link";
+
+const Card = (props) => {
+    const url = props.petData.img_url;
+    const svgUrl = props.petData.type.toLowerCase() === 'cat'
     ? '/cat.svg'
-    : petData.type.toLowerCase() === 'dog'
+    : props.petData.type.toLowerCase() === 'dog'
     ? '/dog.svg'
     : '/other.svg';
-    const age = petData.age <= 1
+    const age = props.petData.age <= 1
     ? '0-1 ano'
-    : petData.age > 1 && petData.age <= 3
+    : props.petData.age > 1 && props.petData.age <= 3
     ? '1-3 anos'
     : 'mais de 3 anos';
-    const gender = petData.gender.toLowerCase() === 'male'
+    const gender = props.petData.gender.toLowerCase() === 'male'
     ? '♂'
     : '♀';
+
+
+    // Para passar o objeto que contem todos os dados de cada animal (petData), é necessario paassa-lo na URL do Link em forma de JSON.
+    const queryString = encodeURIComponent(JSON.stringify(props.petData))
+
 
     return (
         <div className="card-pet-container">
             <img className="card-pet type" src={svgUrl} alt="type-img"></img>
             <img className="card-pet img" src={url} alt="pet-img"></img>
-            <h3 className="card-pet type-text">{petData.type}</h3>
+            <h3 className="card-pet type-text">{props.petData.type}</h3>
             <span className="card-pet gender-symbol">{gender}</span>
             <div className="card-pet text">
-                <p>Nome: {petData.name}</p>
-                <p>Raça: {petData.breed}</p>
+                <p>Nome: {props.petData.name}</p>
+                <p>Raça: {props.petData.breed}</p>
                 <p>Idade: {age}</p>
-                <p>Localização: {petData.location}</p>
+                <p>Localização: {props.petData.location}</p>
             </div>
-            <button className="card-pet btn">Conheça</button>
+            <Link href={`/pets/${props.petIds}?data=${queryString}`}>
+                <button className="card-pet btn">Conheça</button>
+            </Link>
             <svg width="225" height="290" viewBox="0 0 225 293" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="18" y="54" width="207" height="239" rx="10" fill="white"/>
                 <circle cx="47" cy="47" r="47" fill="#E6E7FB"/>

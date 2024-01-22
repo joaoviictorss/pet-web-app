@@ -135,6 +135,8 @@ const GridSection = ({ dbData }) => {
     }
   };
 
+  const petIds = Object.keys(dataDbRes.pets)
+
   return (
     <div className="grid-section">
       <div
@@ -179,7 +181,7 @@ const GridSection = ({ dbData }) => {
       {menuOpen ? (
         <div className="cards-section">
           {filteredPets.map((pet, index) => (
-            <Card key={index} petData={pet} />
+            <Card key={index} petData={pet} petIds={petIds[index]} />
           ))}
         </div>
       ) : (

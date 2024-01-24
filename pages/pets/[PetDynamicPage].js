@@ -23,8 +23,15 @@ const PetDynamicPage = () => {
         console.error("An error occourred: ", error);
       });
   }, []);
-  console.log(dataRes);
   return <>{dataRes && <PetCardInfos petData={dataRes} />}</>;
 };
 
 export default PetDynamicPage;
+
+export const getServerSideProps = async (context) => {
+  const {id} = context.query
+  
+  return {
+    props: {}
+  }
+}

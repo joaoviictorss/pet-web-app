@@ -1,12 +1,12 @@
 import React from "react";
 
+//svgs
 import List from "@/components/svgs/List";
 import Location from "@/components/svgs/Location";
 import Infos from "@/components/svgs/Infos";
+import Bird from "./svgs/Bird";
 
 const PetCardInfos = ({ petData }) => {
-
-    console.log(petData)
   // const url = petData.img_url;
   const url =
     "https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg";
@@ -23,6 +23,7 @@ const PetCardInfos = ({ petData }) => {
       : "/other.svg";
   const gender = petData.gender;
   const signalGender = gender.toLowerCase() === "male" ? "♂" : "♀";
+
   return (
     <>
       <div className="dynamic-page">
@@ -38,27 +39,33 @@ const PetCardInfos = ({ petData }) => {
             </div>
             <h1 className="name-pet">{name}</h1>
           </div>
+
           <div className="pet-infos">
-            <div className="container-info">
-              <span>
-                <List />
-                Condição:
-                <p className="">{condition}</p>
-              </span>
+            <div>
+              <div className="container-info">
+                <span>
+                  <List />
+                  <h2>Condição:</h2>
+                </span>
+                <p className="description">{condition}</p>
+              </div>
+              <div className="container-info">
+                <span>
+                  <Location />
+                  <h2>Localização:</h2>
+                </span>
+                <p className="description">{location}</p>
+              </div>
+              <div className="container-info">
+                <span>
+                  <Infos />
+                  <h2>Informações adicional</h2>
+                </span>
+                <p className="description">{aditionaInfo}</p>
+              </div>
             </div>
-            <div className="container-info">
-              <h2>
-                <Location />
-                Localização:
-              </h2>
-              <p className="">{location}</p>
-            </div>
-            <div className="container-info">
-              <h2>
-                <Infos />
-                Informações adicional
-              </h2>
-              <p className="">{aditionaInfo}</p>
+            <div className="bird-svg">
+              <Bird />
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ import MenuButton from "./MenuButton";
 
 const GridSection = ({ dbData }) => {
   const dataDbRes = dbData;
-
   const [selectedType, setSelectedType] = useState([]);
   const [selectedAge, setSelectedAge] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState(null);

@@ -1,21 +1,78 @@
 .dynamic-page{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container-pet-info{
-    height: 810px;
-    width: 560px;
+.card-pet-info{
+    height: 560px;
+    width: 810px;
+    border-radius: 20px;
+    overflow: hidden;
 }
+
 
 .header-pet-info{
     background-color: #5E516F;
+    height: 125px;
+    display: flex;
+    color: white;
+    width: 100%;
+}
+.header-pet-info .icon{
+    background-color: white;
+    position: relative;
+    left: 5%;
+    top: 10%;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 4px #BAC2D7;
 }
 
-.header-pet-info .pet-img{
+.signal-gender{
+    position: relative;
+    left: 6%;
+    top: 5%;
+    font-size: 35px;
+}
+
+.gender{
+    position:  relative;
+    left: 6%;
+    top: 25% ;
+    font-size: 30px;
+}
+.centralize-img{
+    position: relative;
+    left: 15%;
+    top: 25%;
+}
+
+.centralize-img .pet-img{
+    
     border-radius: 50%;
-    width: 50%;
+    height: 185px;
+    width: 185px;
+    border: solid 10px  #5E516F;
+}
+.name-pet{
+    position: relative;
+    left: 25%;
+    top: 45%;
+}
+
+.pet-infos{
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.container-info{
+    padding: 30px;
+
 }

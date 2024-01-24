@@ -1,52 +1,30 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import PetCardInfos from "@/components/PetCardInfos";
 
 const PetDynamicPage = () => {
   const router = useRouter();
-  const { PetDynamicPage, data } = router.query;
+  const id = router.query.PetDynamicPage;
 
-
-        const parseData = JSON.parse(decodeURIComponent(data || "{}"));
-
-
-  console.log(parseData)
-
-  // const url = parseData.img_url;
-  const url =
-    "https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg";
-  const name = parseData.name;
-  const age = parseData.age;
-  const condition = parseData.condition;
-  const location = parseData.location;
-  const aditionaInfo = parseData.aditional_info;
-  const svgUrl =
-    parseData.type.toLowerCase() === "cat"
-      ? "/cat.svg"
-      : parseData.type.toLowerCase() === "dog"
-      ? "/dog.svg"
-      : "/other.svg";
-  const gender = parseData.gender;
-  const signalGender = gender.toLowerCase() === "male" ? "♂" : "♀";
-
-  return (
-    <div>
-      {parseData && (
-        <div className="dynamic-page">
-          <div className="card-pet-info">
-            <div className="header-pet-info">
-              <img src={svgUrl}></img>
-              <h2>{signalGender}</h2>
-              <p>{gender}</p>
-              <img src={url} className="pet-img"></img>
-              <h1>{name}</h1>
-            </div>
-            <div className="pet-infos"></div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+  const [dataRes, setDataRes] = useState(null);
+  useEffect(() => {
+    fetch(`/api/getData`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok!");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setDataRes(Object(data.pets[id]));
+      })
+      .catch((error) => {
+        console.error("An error occourred: ", error);
+      });
+  }, []);
+  console.log(dataRes);
+  return <>{dataRes && <PetCardInfos petData={dataRes} />}</>;
 };
 
 export default PetDynamicPage;

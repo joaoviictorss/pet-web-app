@@ -16,11 +16,6 @@ const Card = (props) => {
     ? '♂'
     : '♀';
 
-
-    // Para passar o objeto que contem todos os dados de cada animal (petData), é necessario paassa-lo na URL do Link em forma de JSON.
-    const queryString = encodeURIComponent(JSON.stringify(props.petData))
-
-
     return (
         <div className="card-pet-container">
             <img className="card-pet type" src={svgUrl} alt="type-img"></img>
@@ -33,7 +28,7 @@ const Card = (props) => {
                 <p>Idade: {age}</p>
                 <p>Localização: {props.petData.location}</p>
             </div>
-            <Link href={`/pets/${props.petIds}?data=${queryString}`}>
+            <Link href={`/pets/${props.petIds}`}>
                 <button className="card-pet btn">Conheça</button>
             </Link>
             <svg width="225" height="290" viewBox="0 0 225 293" fill="none" xmlns="http://www.w3.org/2000/svg">

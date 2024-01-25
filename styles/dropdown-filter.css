@@ -1,13 +1,13 @@
 .dropdown-filter-container {
     display: flex;
     align-items: center;
-    margin-left: 15px;
     margin-bottom: 5px;
+    
 }
 .dropdown-filter-dropdown {
     padding: 4px 8px;
     border-radius: 5px;
-    width: clamp(165px, 85%, 220px);
+    width: 100%;
     font-size: 14px;
     cursor: pointer;
     outline: none;

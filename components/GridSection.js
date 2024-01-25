@@ -4,6 +4,7 @@ import DropdownFilter from "./Dropdown";
 import CheckboxFilter from "./CheckboxFilter";
 import ButtonFilter from "./ButtonFilter";
 import MenuButton from "./MenuButton";
+import Filter from "./svgs/Filter";
 
 const GridSection = ({ dbData }) => {
   const dataDbRes = dbData;
@@ -134,7 +135,7 @@ const GridSection = ({ dbData }) => {
     }
   };
 
-  const petIds = Object.keys(dataDbRes.pets)
+  const petIds = Object.keys(dataDbRes.pets);
 
   return (
     <div className="grid-section">
@@ -144,36 +145,52 @@ const GridSection = ({ dbData }) => {
         }`}
       >
         <div className="filter-section">
-          <MenuButton toogleMenu={toogleMenu} className="button-open-menu"/>
+          <MenuButton toogleMenu={toogleMenu} className="button-open-menu" />
           <div className="filter-bar">
-            <ButtonFilter
-              title={"Pet"}
-              options={uniqueType}
-              onChange={(selectedOption) =>
-                handleFilterChange(selectedOption, "Type")
-              }
-            />
-            <CheckboxFilter
-              title={"Idade"}
-              options={uniqueAge}
-              onChange={(selectedOption) =>
-                handleFilterChange(selectedOption, "Age")
-              }
-            />
-            <DropdownFilter
-              title={"Raça"}
-              options={uniqueBreed}
-              onChange={(selectedOption) =>
-                handleFilterChange(selectedOption, "Breed")
-              }
-            />
-            <DropdownFilter
-              title={"Localização"}
-              options={uniqueLocation}
-              onChange={(selectedOption) =>
-                handleFilterChange(selectedOption, "Location")
-              }
-            />
+            <div className="filter-svg">
+              <span>
+                <Filter />
+                <h1>Filtros</h1>
+              </span>
+            </div>
+            <div className="filters">
+              <div>
+                <ButtonFilter
+                  title={"Pet"}
+                  options={uniqueType}
+                  onChange={(selectedOption) =>
+                    handleFilterChange(selectedOption, "Type")
+                  }
+                />
+              </div>
+              <div>
+                <CheckboxFilter
+                  title={"Idade"}
+                  options={uniqueAge}
+                  onChange={(selectedOption) =>
+                    handleFilterChange(selectedOption, "Age")
+                  }
+                />
+              </div>
+              <div>
+                <DropdownFilter
+                  title={"Raça"}
+                  options={uniqueBreed}
+                  onChange={(selectedOption) =>
+                    handleFilterChange(selectedOption, "Breed")
+                  }
+                />
+              </div>
+              <div>
+                <DropdownFilter
+                  title={"Localização"}
+                  options={uniqueLocation}
+                  onChange={(selectedOption) =>
+                    handleFilterChange(selectedOption, "Location")
+                  }
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

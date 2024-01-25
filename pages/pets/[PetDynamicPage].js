@@ -29,9 +29,9 @@ const PetDynamicPage = () => {
 export default PetDynamicPage;
 
 export const getServerSideProps = async (context) => {
-  const {id} = context.query
-  
+  const { id } = context.query;
+
   return {
-    props: {}
-  }
-}
+    props: {},
+  };
+};

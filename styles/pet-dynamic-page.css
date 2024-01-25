@@ -6,12 +6,12 @@
   justify-content: center;
 }
 
-.back-button{
+.back-button {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  transition-duration: .3s;
-  opacity: .8;
+  top: 0;
+  left: 0;
+  transition-duration: 0.3s;
+  opacity: 0.8;
 }
 .card-pet-info {
   height: 560px;
@@ -24,16 +24,24 @@
 .header-pet-info {
   background-color: #5e516f;
   height: 125px;
-  display: flex;
-  color: white;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 120px;
+  color: white;
   font-family: sans-serif;
+  padding: 20px;
 }
+
+.header-pet-info .gender-type {
+  display: flex;
+  align-self: center;
+  gap: 3px;
+  width: 100%;
+}
+
 .header-pet-info .icon {
   background-color: white;
-  position: relative;
-  left: 5%;
-  top: 10%;
   border-radius: 50%;
   height: 90px;
   width: 90px;
@@ -43,41 +51,42 @@
   border: solid 4px #bac2d7;
 }
 
-.signal-gender {
-  position: relative;
-  left: 6%;
-  top: 5%;
-  font-size: 35px;
+.header-pet-info .signal-gender {
+  font-size: 32px;
 }
 
-.gender {
-  position: relative;
-  left: 6%;
-  top: 25%;
-  font-size: 30px;
+.header-pet-info .gender {
+  align-self: center;
+  font-size: 24px;
 }
 .centralize-img {
-  position: relative;
-  left: 10%;
-  top: 25%;
+  border-radius: 50%;
+  background-color: #5e516f;
+  height: 180px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: flex-end;
+  padding: 8px;
+  object-fit: cover;
 }
 
-.centralize-img .pet-img {
+.pet-img {
   border-radius: 50%;
-  height: 185px;
-  width: 185px;
-  border: solid 10px #5e516f;
+  width: 100%;
+  height: 100%;
 }
 .name-pet {
-  position: relative;
-  left: 25%;
-  top: 45%;
-  color: #fff;
-
-  font-size: 42px;
+  width: 100%;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+.name-pet h1 {
+  font-size: 48px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 300;
+  justify-self: flex-end;
 }
 
 .pet-infos {

@@ -8,13 +8,11 @@ import Bird from "./svgs/Bird";
 import BackButton from "./svgs/BackButton";
 
 const PetCardInfos = ({ petData }) => {
-  // const url = petData.img_url;
-  const url =
-    "https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg";
+  const url = petData.img_url;
   const name = petData.name;
   const age = petData.age;
   const condition = petData.condition;
-  const location = petData.location;
+  const contact = petData.contact;
   const aditionaInfo = petData.aditional_info;
   const svgUrl =
     petData.type.toLowerCase() === "cat"
@@ -29,21 +27,25 @@ const PetCardInfos = ({ petData }) => {
     <>
       <div className="dynamic-page">
         <div className="back-button">
-          <Link href={'/'}>
-            <BackButton/>
+          <Link href={"/"}>
+            <BackButton />
           </Link>
         </div>
         <div className="card-pet-info">
           <div className="header-pet-info">
-            <div className="icon">
-              <img src={svgUrl}></img>
+            <div className="gender-type">
+              <div className="icon">
+                <img src={svgUrl}></img>
+              </div>
+              <h2 className="signal-gender">{signalGender}</h2>
+              <p className="gender">{gender}</p>
             </div>
-            <h2 className="signal-gender">{signalGender}</h2>
-            <p className="gender">{gender}</p>
             <div className="centralize-img">
               <img src={url} className="pet-img"></img>
             </div>
-            <h1 className="name-pet">{name}</h1>
+            <div className="name-pet">
+              <h1>{name}</h1>
+            </div>
           </div>
 
           <div className="pet-infos">
@@ -60,7 +62,7 @@ const PetCardInfos = ({ petData }) => {
                   <Location />
                   <h2>Localização:</h2>
                 </span>
-                <p>{location}</p>
+                <p>{contact}</p>
               </div>
               <div className="container-info">
                 <span>
@@ -73,7 +75,6 @@ const PetCardInfos = ({ petData }) => {
             <div className="bird-svg">
               <Bird />
             </div>
-            
           </div>
         </div>
       </div>

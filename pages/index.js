@@ -2,6 +2,7 @@ import GridSection from "@/components/GridSection";
 import HeroMainCard from "@/components/HeroMainCard";
 import { useEffect, useState } from "react";
 
+
 const App = () => {
     const [ dataRes, setDataRes ] = useState(null);
     useEffect(() => {

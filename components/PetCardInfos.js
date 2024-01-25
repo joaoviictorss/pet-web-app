@@ -1,10 +1,11 @@
 import React from "react";
-
+import Link from "next/link";
 //svgs
 import List from "@/components/svgs/List";
 import Location from "@/components/svgs/Location";
 import Infos from "@/components/svgs/Infos";
 import Bird from "./svgs/Bird";
+import BackButton from "./svgs/BackButton";
 
 const PetCardInfos = ({ petData }) => {
   // const url = petData.img_url;
@@ -27,6 +28,11 @@ const PetCardInfos = ({ petData }) => {
   return (
     <>
       <div className="dynamic-page">
+        <div className="back-button">
+          <Link href={'/'}>
+            <BackButton/>
+          </Link>
+        </div>
         <div className="card-pet-info">
           <div className="header-pet-info">
             <div className="icon">
@@ -47,26 +53,27 @@ const PetCardInfos = ({ petData }) => {
                   <List />
                   <h2>Condição:</h2>
                 </span>
-                <p className="description">{condition}</p>
+                <p>{condition}</p>
               </div>
               <div className="container-info">
                 <span>
                   <Location />
                   <h2>Localização:</h2>
                 </span>
-                <p className="description">{location}</p>
+                <p>{location}</p>
               </div>
               <div className="container-info">
                 <span>
                   <Infos />
                   <h2>Informações adicional</h2>
                 </span>
-                <p className="description">{aditionaInfo}</p>
+                <p>{aditionaInfo}</p>
               </div>
             </div>
             <div className="bird-svg">
               <Bird />
             </div>
+            
           </div>
         </div>
       </div>

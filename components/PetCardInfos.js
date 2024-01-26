@@ -15,13 +15,13 @@ const PetCardInfos = ({ petData }) => {
   const contact = petData.contact;
   const aditionaInfo = petData.aditional_info;
   const svgUrl =
-    petData.type.toLowerCase() === "cat"
+    petData.type.toLowerCase() === "gato"
       ? "/cat.svg"
-      : petData.type.toLowerCase() === "dog"
+      : petData.type.toLowerCase() === "cachorro"
       ? "/dog.svg"
       : "/other.svg";
   const gender = petData.gender;
-  const signalGender = gender.toLowerCase() === "male" ? "♂" : "♀";
+  const signalGender = gender.toLowerCase() === "macho" ? "♂" : "♀";
 
   return (
     <>

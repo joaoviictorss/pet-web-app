@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const Card = (props) => {
     const url = props.petData.img_url;
-    const svgUrl = props.petData.type.toLowerCase() === 'cat'
+    const svgUrl = props.petData.type.toLowerCase() === 'gato'
     ? '/cat.svg'
-    : props.petData.type.toLowerCase() === 'dog'
+    : props.petData.type.toLowerCase() === 'cachorro'
     ? '/dog.svg'
     : '/other.svg';
     const age = props.petData.age <= 1
@@ -12,7 +12,7 @@ const Card = (props) => {
     : props.petData.age > 1 && props.petData.age <= 3
     ? '1-3 anos'
     : 'mais de 3 anos';
-    const gender = props.petData.gender.toLowerCase() === 'male'
+    const gender = props.petData.gender.toLowerCase() === 'macho'
     ? '♂'
     : '♀';
 

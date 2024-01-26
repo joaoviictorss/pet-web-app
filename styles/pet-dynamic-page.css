@@ -62,14 +62,14 @@
 .centralize-img {
   border-radius: 50%;
   background-color: #5e516f;
-  height: 180px;
-  width: 100%;
+  min-height: 180px;
+  min-width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   justify-self: flex-end;
   padding: 8px;
-  object-fit: cover;
+
 }
 
 .pet-img {
@@ -111,7 +111,7 @@
   height: 100px;
   padding: 60px;
   color: #323232;
-  margin-top: 10px;
+  margin: 10px 0px;
 }
 
 .container-info span {
@@ -131,4 +131,36 @@
   font-size: 14px;
   margin: 30px 70px;
   font-weight: 400;
+}
+
+@media (max-width: 830px) {
+  .card-pet-info{
+    margin-top: 120px;
+    width: 80%;
+    height: min-content;
+  }
+  .header-pet-info{
+    gap: 0px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .centralize-img{
+    display: none;
+  }
+  .name-pet h1{
+    text-align: end;
+    font-size: 40px;
+  }
+  
+  .bird-svg{
+    position:static;
+    align-self: center;
+  }
+  .container-info{
+    margin: 30px 0px;
+    padding: 30px;
+  }
+  .container-info p {
+    margin: 20px 20px;
+  }
 }

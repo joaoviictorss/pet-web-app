@@ -35,8 +35,8 @@ const GridSection = ({ dbData }) => {
   };
 
   const getTypeGroup = (type) => {
-    if (type === "Dog") return "Dog";
-    if (type === "Cat") return "Cat";
+    if (type === "Cachorro") return "Dog";
+    if (type === "Gato") return "Cat";
     return "Other";
   };
 

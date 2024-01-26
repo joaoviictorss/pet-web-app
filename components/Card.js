@@ -31,7 +31,7 @@ const Card = (props) => {
             <Link href={`/pets/${props.petIds}`}>
                 <button className="card-pet btn">Conheça</button>
             </Link>
-            <svg width="225" height="290" viewBox="0 0 225 293" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="275" height="350" viewBox="0 0 225 293" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="18" y="54" width="207" height="239" rx="10" fill="white"/>
                 <circle cx="47" cy="47" r="47" fill="#E6E7FB"/>
                 <circle cx="47" cy="47" r="44" fill="white"/>

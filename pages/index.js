@@ -22,6 +22,8 @@ const App = () => {
             })
     }, [])
 
+    console.log(process.env)
+
     return (
         <>
             <HeroMainCard />

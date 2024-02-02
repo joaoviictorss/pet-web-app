@@ -20,7 +20,9 @@ const App = () => {
             .catch(error => {
                 console.error('An error occourred: ', error);
             })
-    }, [])
+    }, [])  
+
+    console.log(process.env.NEXT_PUBLIC_TEST)
 
     return (
         <>

@@ -9,10 +9,15 @@ import '../styles/dropdown-filter.css';
 import '../styles/menu-button.css'
 import '../styles/pet-dynamic-page.css'
 
-const App = ({ Component, pageProps }) => {
-    return (
-        <Component {...pageProps} />
-    )
-}
+export const metadata = {
+  title: "Pet Web App",
+  description: "Sistema de adoção de pets",
+};
 
-export default App;
+export default function RootLayout({ children }) {
+  return (
+    <html lang="pt-br">
+      <body>{children}</body>
+    </html>
+  );
+}

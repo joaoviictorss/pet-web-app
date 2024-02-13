@@ -1,6 +1,6 @@
 import { readDataFromDb } from "./dbFunctions";
 
-export default async (req, res) => {
+export default async function getData (req, res) {
     if(req.method === 'GET') {
         try {
             const data = await readDataFromDb();
